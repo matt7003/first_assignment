@@ -2,9 +2,13 @@
 
 <a href="{% url 'home' %}"> 다시하기 </a>
 
-<h1>입력한 텍스트: </h1>
+<h1>입력한 text: </h1>
 <!-- 입력받은 전체 텍스트 -->
 {{full}}
+<h1>총 글자수 : {{speling}}</h1>
+
+<br>
+
 <h1>단어 카운트:</h1>
 {%for word, howmany in dictionary%}
 

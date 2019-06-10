@@ -12,6 +12,7 @@ def result(request):
     text = request.GET['fulltext']
     words = text.split()
     word_dictionary = {}
+    speling = len(list(text))
     
     for word in words:
         if word in word_dictionary:
@@ -19,7 +20,8 @@ def result(request):
         else:
             word_dictionary[word]=1
     
-    return render(request, 'wordcount/result.html', {'full':text, 'total' : len(words), 'dictionary': word_dictionary.items()})
+    return render(request, 'wordcount/result.html', {'full':text, 'total' : len(words), 'dictionary': word_dictionary.items(), 'speling':speling})
+
     
 
     
